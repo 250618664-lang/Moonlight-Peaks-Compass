@@ -1,0 +1,300 @@
+---
+import Base from '../layouts/Base.astro';
+import EvidenceBadge from '../components/EvidenceBadge.astro';
+import AdSlot from '../components/AdSlot.astro';
+---
+
+<Base title="Starter Checklist" noindex={false}>
+  <div class="hero-grid">
+    <div class="panel hero">
+      <span class="eyebrow"><span class="dot warn"></span> Starter Checklist · Source Backed, Not Tested</span>
+      <h1>Moonlight Peaks<br/>Starter Checklist</h1>
+      <p class="lead">A pre-play and pre-buy checklist built from official facts and clearly labeled press leads. No detailed walkthrough, no gift preference guides, no crop or recipe tables.</p>
+
+      <div class="answer-strip">
+        <div class="answer-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <div>
+          <strong>Use official facts + labeled press leads</strong>
+          <span>Nothing invented. All claims trace to source-log IDs. Exact gameplay details require hands-on testing.</span>
+        </div>
+      </div>
+    </div>
+
+    <aside class="panel side">
+      <h2>Before You Begin</h2>
+      <div class="status-grid" style="margin-top: 0;">
+        <div class="status-card info full">
+          <h3>This is a pre-play checklist</h3>
+          <p>Based on official facts and press leads. Not a walkthrough. No exact routes or step-by-step tasks are published without hands-on testing.</p>
+        </div>
+        <div class="status-card warn full">
+          <h3>Held items</h3>
+          <p>Save transfer, romance gifts, exact demo walkthrough, crop tables, and character profiles are NOT published until confirmed.</p>
+        </div>
+      </div>
+      <div style="height: 1px; background: var(--line); margin: 4px 0;"></div>
+      <div class="mini">
+        <h3>See also</h3>
+        <p><a href="/updates/" style="color: var(--accent);">→ Official Updates</a></p>
+        <p><a href="/demo/" style="color: var(--accent);">→ Demo status</a></p>
+        <p><a href="/switch-steam/" style="color: var(--accent);">→ Platform choice</a></p>
+        <p><a href="/sources/" style="color: var(--accent);">→ Held claims</a></p>
+      </div>
+    </aside>
+  </div>
+
+  <AdSlot />
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Day One Preparation</h2>
+        <p>Before your first session, use official sources first. These steps cover what is confirmed, not what is speculated.</p>
+      </div>
+    </div>
+
+    <div class="check-list">
+      <div class="check-item done">
+        <div class="check-num">1</div>
+        <div class="check-text">
+          <strong>Check official updates before starting</strong>
+          <p>The game launched July 6–7, 2026. Check the <a href="/updates/" style="color: var(--accent);">Official Updates page</a> for the latest confirmed announcements from the developer or publisher. Official Steam announcements are the first place to look for post-launch changes.</p>
+        </div>
+        <span class="check-badge info">Source confirmed</span>
+      </div>
+      <div class="check-item done">
+        <div class="check-num">2</div>
+        <div class="check-text">
+          <strong>Choose a confirmed store or platform</strong>
+          <p>Moonlight Peaks is confirmed available on Steam (Windows PC) and Nintendo Switch. A demo is available on both of these platforms. Check the <a href="/switch-steam/" style="color: var(--accent);">Platform Status page</a> for the current availability matrix.</p>
+        </div>
+        <span class="check-badge info">Source confirmed</span>
+      </div>
+      <div class="check-item done">
+        <div class="check-num">3</div>
+        <div class="check-text">
+          <strong>Confirm the full game is released in your region</strong>
+          <p>Use the source-labeled July 6 / July 7 / July 9 release status for your platform and region. See <a href="/release-date/" style="color: var(--accent);">Release Dates</a> for the full source-labeled breakdown.</p>
+        </div>
+        <span class="check-badge info">Source confirmed</span>
+      </div>
+      <div class="check-item pending">
+        <div class="check-num">4</div>
+        <div class="check-text">
+          <strong>Treat the demo as a separate experience</strong>
+          <p>The demo is available on Steam and Switch as a try-before-buy. Demo progress carryover to the full game has not been officially confirmed. Do not plan around a demo save until official confirmation appears. <a href="/demo/" style="color: var(--accent);">See Demo Status →</a></p>
+        </div>
+        <span class="check-badge warn">Not confirmed</span>
+      </div>
+      <div class="check-item pending">
+        <div class="check-num">5</div>
+        <div class="check-text">
+          <strong>Use official channels for patches and status</strong>
+          <p>If you encounter bugs, performance issues, or unexpected behavior at launch, check official Steam announcements and the official Moonlight Peaks website before looking at community reports.</p>
+        </div>
+        <span class="check-badge warn">Best practice</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Pre-Download Checklist</h2>
+        <p>Things to verify or set up before downloading the demo.</p>
+      </div>
+    </div>
+
+    <div class="check-list">
+      <div class="check-item pending">
+        <div class="check-num">1</div>
+        <div class="check-text">
+          <strong>Check platform demo availability</strong>
+          <p>Demo is available on Steam (Windows PC) and Nintendo Switch. Switch demo also runs on Switch 2. Google Play Games demo status is not confirmed. <a href="/demo/" style="color: var(--accent);">See full demo status →</a></p>
+        </div>
+        <span class="check-badge info">Source confirmed</span>
+      </div>
+      <div class="check-item pending">
+        <div class="check-num">2</div>
+        <div class="check-text">
+          <strong>Confirm your platform launch date</strong>
+          <p>Use the source-labeled July 6 / July 7 / July 9 release status for your platform and region. <a href="/release-date/" style="color: var(--accent);">See full release dates →</a></p>
+        </div>
+        <span class="check-badge info">Source confirmed</span>
+      </div>
+      <div class="check-item pending">
+        <div class="check-num">3</div>
+        <div class="check-text">
+          <strong>Open the official store page for your platform and confirm the current purchase or download status</strong>
+          <p>Check the Steam store page or your console store for current availability. Do not assume a download is available without confirming on the store page first.</p>
+        </div>
+        <span class="check-badge info">Source confirmed</span>
+      </div>
+      <div class="check-item pending">
+        <div class="check-num">4</div>
+        <div class="check-text">
+          <strong>Review Steam store system requirements before downloading the PC version</strong>
+          <p>Check the Steam store page for any posted minimum or recommended specs before downloading the PC version.</p>
+        </div>
+        <span class="check-badge info">Best practice</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Demo Session — What to Expect</h2>
+        <p>Based on official Marvelous Europe announcement. No exact walkthrough is published.</p>
+      </div>
+    </div>
+
+    <div class="check-list">
+      <div class="check-item done">
+        <div class="check-num">1</div>
+        <div class="check-text">
+          <strong>Character creation</strong>
+          <p>Official press release confirms character creation is included in the demo. The full scope of customization options requires hands-on testing.</p>
+        </div>
+        <span class="check-badge good">Official source</span>
+      </div>
+      <div class="check-item done">
+        <div class="check-num">2</div>
+        <div class="check-text">
+          <strong>Magical mini-games</strong>
+          <p>Official press release mentions magical mini-games as part of the demo content scope.</p>
+        </div>
+        <span class="check-badge good">Official source</span>
+      </div>
+      <div class="check-item done">
+        <div class="check-num">3</div>
+        <div class="check-text">
+          <strong>Town resident interactions</strong>
+          <p>Official press release describes interactions with town residents including werewolves, witches, and mermaids. The nature and depth of these interactions requires hands-on testing.</p>
+        </div>
+        <span class="check-badge good">Official source</span>
+      </div>
+      <div class="check-item done">
+        <div class="check-num">4</div>
+        <div class="check-text">
+          <strong>Controller support</strong>
+          <p>PC Gamer's preview (third-party press lead, not official) mentions controller use as recommended for the demo. This is a press lead, not an official requirement statement. <em>Source: moonlight-pcgamer-demo-2026-06 — press lead, not sole source.</em></p>
+        </div>
+        <span class="check-badge warn">Press lead</span>
+      </div>
+      <div class="check-item done">
+        <div class="check-num">5</div>
+        <div class="check-text">
+          <strong>Purchase-decision preview framing</strong>
+          <p>PC Gamer describes the June 2026 demo as a purchase-decision preview. This is third-party press framing, not an official statement. <em>Source: moonlight-pcgamer-demo-2026-06 — press lead.</em></p>
+        </div>
+        <span class="check-badge warn">Press lead</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Game Premise — What Is Confirmed</h2>
+        <p>Core identity facts from official sources.</p>
+      </div>
+    </div>
+
+    <div class="check-list">
+      <div class="check-item done">
+        <div class="check-num">✓</div>
+        <div class="check-text">
+          <strong>Supernatural life-sim</strong>
+          <p>Moonlight Peaks is officially described as a supernatural life-sim about life as a vampire in the town of Moonlight Peaks.</p>
+        </div>
+        <span class="check-badge good">Official site</span>
+      </div>
+      <div class="check-item done">
+        <div class="check-num">✓</div>
+        <div class="check-text">
+          <strong>Raising mystical crops, potion-making, spell-casting</strong>
+          <p>Official descriptions mention these core activities. The specific crops, potions, and spells require hands-on gameplay to detail.</p>
+        </div>
+        <span class="check-badge good">Official site</span>
+      </div>
+      <div class="check-item done">
+        <div class="check-num">✓</div>
+        <div class="check-text">
+          <strong>Befriending or romancing werewolves, witches, and mermaids</strong>
+          <p>Official site and Steam describe this as part of the game's social system. Exact romance mechanics, gift preferences, and heart events are not published on this site.</p>
+        </div>
+        <span class="check-badge good">Official site · Steam</span>
+      </div>
+      <div class="check-item done">
+        <div class="check-num">✓</div>
+        <div class="check-text">
+          <strong>Showing a skeptical father that compassion is possible</strong>
+          <p>Steam describes this as the core premise — the player's vampire character must show their skeptical father that a life of compassion is possible.</p>
+        </div>
+        <span class="check-badge good">Steam store</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>What This Checklist Does NOT Include</h2>
+        <p>These topics are held until officially confirmed or hands-on tested.</p>
+      </div>
+    </div>
+
+    <div class="check-list">
+      <div class="check-item hold">
+        <div class="check-num">✗</div>
+        <div class="check-text">
+          <strong>Exact demo walkthrough or task routes</strong>
+          <p>No walkthrough is published. PC Gamer describes it as a purchase-decision preview — not a guided experience. Exact task sequence requires hands-on testing.</p>
+        </div>
+        <span class="check-badge warn">Held</span>
+      </div>
+      <div class="check-item hold">
+        <div class="check-num">✗</div>
+        <div class="check-text">
+          <strong>Save transfer or demo progress carryover</strong>
+          <p>Official sources have not confirmed whether demo save data carries over to the full game. Requires hands-on testing.</p>
+        </div>
+        <span class="check-badge warn">Held</span>
+      </div>
+      <div class="check-item hold">
+        <div class="check-num">✗</div>
+        <div class="check-text">
+          <strong>Romance gifts or dating routes</strong>
+          <p>Official sources confirm romance with supernatural locals exists. Specific gift preferences, heart events, or romance routes are not published on this site until hands-on tested or officially documented.</p>
+        </div>
+        <span class="check-badge warn">Held</span>
+      </div>
+      <div class="check-item hold">
+        <div class="check-num">✗</div>
+        <div class="check-text">
+          <strong>Crop tables, recipes, prices, or growth times</strong>
+          <p>Official sources confirm "mystical crops" and "potion-making" as gameplay pillars. Specific crop lists, recipes, pricing, or growth times are not published on this site.</p>
+        </div>
+        <span class="check-badge warn">Held</span>
+      </div>
+      <div class="check-item hold">
+        <div class="check-num">✗</div>
+        <div class="check-text">
+          <strong>Full character or villager list</strong>
+          <p>Werewolves, witches, and mermaids are confirmed as resident types. Full villager names, portraits, schedules, or personality details are not published on this site.</p>
+        </div>
+        <span class="check-badge warn">Held</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <EvidenceBadge status="source-backed-not-tested" lastChecked="2026-07-10" gameVersion="post-launch" />
+    <p style="margin-top: 10px; font-size: 13px; color: var(--quiet);">
+      Sources: official Moonlight Peaks site · Steam store · Marvelous Europe June 2026 demo announcement · PC Gamer preview (press lead only)
+    </p>
+  </section>
+</Base>

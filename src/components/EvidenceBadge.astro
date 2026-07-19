@@ -1,0 +1,31 @@
+---
+// EvidenceBadge — shows verification status at top of each page
+interface Props {
+  status: 'official-confirmed' | 'source-backed-not-tested' | 'limited-official-plus-unverified' | 'status-page' | 'needs-gameplay';
+  lastChecked?: string;
+  gameVersion?: string;
+}
+
+const { status, lastChecked = '2026-07-02', gameVersion = 'pre-release' } = Astro.props;
+
+const CONFIG = {
+  'official-confirmed':              { label: 'Source Confirmed',     dot: 'good',   desc: 'Verified against official sources' },
+  'source-backed-not-tested':       { label: 'Source Backed',        dot: 'warn',   desc: 'From official sources; not hands-on tested' },
+  'limited-official-plus-unverified':{ label: 'Partial',             dot: 'warn',   desc: 'Some official facts; some points need hands-on testing' },
+  'status-page':                    { label: 'Status Page',          dot: 'info',   desc: 'Tracks external source status; not final facts' },
+  'needs-gameplay':                 { label: 'Needs Playtest',       dot: 'muted',  desc: 'Requires hands-on demo testing before publishing details' },
+} as const;
+
+const cfg = CONFIG[status] ?? CONFIG['status-page'];
+---
+
+<div class="evidence-badge" data-status={status}>
+  <span class={`dot ${cfg.dot}`}></span>
+  <strong>{cfg.label}</strong>
+  <span>·</span>
+  <span>{cfg.desc}</span>
+  <span>·</span>
+  <span>Last checked {lastChecked}</span>
+  <span>·</span>
+  <span>{gameVersion}</span>
+</div>

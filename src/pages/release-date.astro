@@ -1,0 +1,188 @@
+---
+import Base from '../layouts/Base.astro';
+import EvidenceBadge from '../components/EvidenceBadge.astro';
+import AdSlot from '../components/AdSlot.astro';
+import { SITE } from '../data/site';
+---
+
+<Base title="Release Date" noindex={false}>
+  <div class="hero-grid">
+    <div class="panel hero">
+      <span class="eyebrow"><span class="dot"></span> Release Date · Source Confirmed</span>
+      <h1>Moonlight Peaks<br/>Release Date</h1>
+      <p class="lead">When does Moonlight Peaks launch, and why do some sources show July 9? Source labels are included on every date claim.</p>
+
+      <div class="answer-strip">
+        <div class="answer-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <div>
+          <strong>Live: Multiple sources — one game</strong>
+          <span>Different source types show July 6, July 7, and July 9 dates. Each is labeled by its source origin below.</span>
+        </div>
+      </div>
+    </div>
+
+    <aside class="panel side">
+      <h2>Date at a Glance</h2>
+      <div class="status-grid" style="margin-top: 0;">
+        <div class="status-card good full">
+          <h3>July 6 — Steam storefront</h3>
+          <p>Steam store page marked released on July 6. This is a storefront listing date.</p>
+        </div>
+        <div class="status-card good full">
+          <h3>July 7 — Official announcement</h3>
+          <p>Official Steam Available Now post dated July 7. Publisher/developer signal.</p>
+        </div>
+        <div class="status-card warn full">
+          <h3>July 9 — Regional (HK/TW/KR)</h3>
+          <p>Clouded Leopard Entertainment regional release. Applies only to HK/TW/KR Switch/Switch 2.</p>
+        </div>
+      </div>
+      <div style="height: 1px; background: var(--line); margin: 4px 0;"></div>
+      <div class="mini">
+        <h3>See also</h3>
+        <p><a href="/updates/" style="color: var(--accent);">→ Official Updates timeline</a></p>
+        <p><a href="/switch-steam/" style="color: var(--accent);">→ Platform matrix</a></p>
+        <p><a href="/demo/" style="color: var(--accent);">→ Demo status</a></p>
+        <p><a href="/sources/" style="color: var(--accent);">→ All sources</a></p>
+      </div>
+    </aside>
+  </div>
+
+  <AdSlot />
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Source-Labeled Launch Status</h2>
+        <p>Three official sources show three different date signals. None of these are wrong — they reflect different publication layers: storefront, publisher, and regional label.</p>
+      </div>
+    </div>
+
+    <div class="matrix-table-wrapper">
+    <table class="matrix-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Source</th>
+          <th>Source type</th>
+          <th>Claim ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>July 6, 2026</td>
+          <td>Steam store page — released July 6</td>
+          <td>Official storefront listing</td>
+          <td>moonlight-release-live-001</td>
+        </tr>
+        <tr>
+          <td>July 7, 2026</td>
+          <td>Official Steam Available Now post</td>
+          <td>Official announcement</td>
+          <td>moonlight-release-live-002</td>
+        </tr>
+        <tr>
+          <td>July 9, 2026</td>
+          <td>Clouded Leopard Entertainment regional page</td>
+          <td>Regional publisher (HK/TW/KR only)</td>
+          <td>moonlight-regional-001</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="check-list" style="margin-top: 16px;">
+      <div class="check-item hold">
+        <div class="check-num">!</div>
+        <div class="check-text">
+          <strong>Do not declare one universal launch date</strong>
+          <p>July 6, July 7, and July 9 are not contradictory — they reflect storefront listing (Steam), publisher announcement (Available Now), and regional publisher release (Clouded Leopard). Use the source label that matches your readers' platform and region.</p>
+        </div>
+        <span class="check-badge warn">Important distinction</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Source-Labeled July 7, 2026 Status</h2>
+        <p>Source: official Moonlight Peaks website, Steam store page, and Marvelous USA press release (March 2026).</p>
+      </div>
+    </div>
+
+    <div class="date-block">
+      <div class="date-main">July 7, 2026</div>
+      <div class="date-sub">Americas · EU · Steam · Multiple platforms · Source-labeled date</div>
+    </div>
+
+    <div class="check-list" style="margin-top: 16px;">
+      <div class="check-item done">
+        <div class="check-num">A</div>
+        <div class="check-text">
+          <strong>Official Moonlight Peaks website</strong>
+          <p>The official site listed July 7, 2026 as the planned launch date. (source-log: moonlight-official-site)</p>
+        </div>
+        <span class="check-badge good">Official site</span>
+      </div>
+      <div class="check-item done">
+        <div class="check-num">B</div>
+        <div class="check-text">
+          <strong>Steam store page — pre-launch listing</strong>
+          <p>The Steam store page originally listed July 7, 2026 as the planned release. As of July 10, the store listing shows July 6 as the released date — a storefront update that came after the official announcement. (source-log: moonlight-steam-store)</p>
+        </div>
+        <span class="check-badge good">Steam</span>
+      </div>
+      <div class="check-item done">
+        <div class="check-num">C</div>
+        <div class="check-text">
+          <strong>Marvelous USA announcement (March 2026)</strong>
+          <p>Marvelous USA announced July 7, 2026 as the planned launch across PC, Switch, Switch 2, and Google Play Games for Americas and other markets. (source-log: moonlight-marvelous-usa-platforms-2026-03)</p>
+        </div>
+        <span class="check-badge good">Official press release</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>July 9, 2026 — Regional: Hong Kong / Taiwan / Korea</h2>
+        <p>Source: Clouded Leopard Entertainment regional page. This date applies only to Nintendo Switch and Nintendo Switch 2 for these specific markets.</p>
+      </div>
+    </div>
+
+    <div class="date-block">
+      <div class="date-main">July 9, 2026 <span class="region-tag">HK/TW/KR only</span></div>
+      <div class="date-sub">Nintendo Switch · Nintendo Switch 2 · Clouded Leopard Entertainment regional release</div>
+    </div>
+
+    <div class="check-list" style="margin-top: 16px;">
+      <div class="check-item done">
+        <div class="check-num">1</div>
+        <div class="check-text">
+          <strong>Clouded Leopard Entertainment regional page</strong>
+          <p>The official Clouded Leopard page lists July 9, 2026 for Moonlight Peaks on Nintendo Switch and Nintendo Switch 2. (source-log: moonlight-clouded-leopard-page)</p>
+        </div>
+        <span class="check-badge good">Regional official</span>
+      </div>
+      <div class="check-item hold">
+        <div class="check-num">!</div>
+        <div class="check-text">
+          <strong>Do not generalize July 9</strong>
+          <p>July 9 is specific to Clouded Leopard Entertainment's distribution regions. It does not apply to Americas, EU, Steam global, or other markets.</p>
+        </div>
+        <span class="check-badge warn">Important distinction</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <EvidenceBadge status="official-confirmed" lastChecked={SITE.lastChecked} gameVersion="post-launch" />
+    <p style="margin-top: 10px; font-size: 13px; color: var(--quiet);">
+      Sources: Steam store live snapshot July 10 (moonlight-steam-store-live-2026-07) · Official Steam announcements July 2026 (moonlight-steam-official-announcements-2026-07) · Marvelous USA March 2026 announcement (moonlight-marvelous-usa-platforms-2026-03) · Clouded Leopard regional page (moonlight-clouded-leopard-page)
+    </p>
+  </section>
+</Base>

@@ -1,0 +1,190 @@
+---
+import Base from '../layouts/Base.astro';
+import EvidenceBadge from '../components/EvidenceBadge.astro';
+import AdSlot from '../components/AdSlot.astro';
+import { SITE } from '../data/site';
+---
+
+<Base title="Platform Status" noindex={false}>
+  <div class="hero-grid">
+    <div class="panel hero">
+      <span class="eyebrow"><span class="dot"></span> Platform Status · Source Confirmed</span>
+      <h1>Moonlight Peaks<br/>Platform Status</h1>
+      <p class="lead">Which platforms have the game, which have a demo, and are there regional differences? All facts are from official sources.</p>
+
+      <div class="answer-strip">
+        <div class="answer-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8"/></svg>
+        </div>
+        <div>
+          <strong>4 platforms confirmed — full game live</strong>
+          <span>Full game on Steam and Switch. Demo available separately on Steam and Switch. Switch demo runs on Switch 2.</span>
+        </div>
+      </div>
+    </div>
+
+    <aside class="panel side">
+      <h2>Quick Platform Matrix</h2>
+      <div class="status-grid" style="margin-top: 0;">
+        <div class="status-card good full">
+          <h3>Full Game — Live</h3>
+          <p>Steam (Windows PC) and Nintendo Switch. Game is available as of July 6–7, 2026.</p>
+        </div>
+        <div class="status-card info full">
+          <h3>Demo — Separate</h3>
+          <p>Demo is available on Steam and Switch as a try-before-buy. Not all platforms have a demo.</p>
+        </div>
+        <div class="status-card warn full">
+          <h3>Regional Date</h3>
+          <p>HK/TW/KR: July 9 via Clouded Leopard. All other regions: July 7. Do not generalize July 9.</p>
+        </div>
+        <div class="status-card warn full">
+          <h3>Platform Patch Rollout</h3>
+          <p>Steam at 1.1.41 worldwide. Switch, Switch 2, Google Play at 1.1.3 with update to follow (July 15 snapshot). <a href="/updates/" style="color: var(--accent);">See Official Updates →</a></p>
+        </div>
+      </div>
+      <div style="height: 1px; background: var(--line); margin: 4px 0;"></div>
+      <div class="mini">
+        <h3>See also</h3>
+        <p><a href="/updates/" style="color: var(--accent);">→ Official Updates &amp; Patches</a></p>
+        <p><a href="/demo/" style="color: var(--accent);">→ Demo status</a></p>
+        <p><a href="/release-date/" style="color: var(--accent);">→ Release dates</a></p>
+        <p><a href="/sources/" style="color: var(--accent);">→ All sources</a></p>
+      </div>
+    </aside>
+  </div>
+
+  <AdSlot />
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Platform Availability Matrix</h2>
+        <p>Source: Marvelous USA game page, Marvelous Europe June 2026 announcement, Clouded Leopard regional page.</p>
+      </div>
+    </div>
+
+    <div class="matrix-table-wrapper">
+    <table class="matrix-table">
+      <thead>
+        <tr>
+          <th>Platform</th>
+          <th>Game Confirmed</th>
+          <th>Demo Available</th>
+          <th>Launch Date</th>
+          <th>Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Windows PC / Steam</td>
+          <td class="demo-yes">✓ Yes</td>
+          <td class="demo-yes">✓ Yes</td>
+          <td>July 7, 2026</td>
+          <td>Official site · Steam</td>
+        </tr>
+        <tr>
+          <td>Nintendo Switch</td>
+          <td class="demo-yes">✓ Yes</td>
+          <td class="demo-yes">✓ Yes</td>
+          <td>July 7, 2026 (Americas/EU)<br/><span class="region-tag">HK/TW/KR: July 9</span></td>
+          <td>Marvelous USA · Clouded Leopard</td>
+        </tr>
+        <tr>
+          <td>Nintendo Switch 2</td>
+          <td class="demo-yes">✓ Yes</td>
+          <td class="demo-yes">✓ Yes (via Switch demo)</td>
+          <td>July 7, 2026 (Americas/EU)<br/><span class="region-tag">HK/TW/KR: July 9</span></td>
+          <td>Marvelous EU · Clouded Leopard</td>
+        </tr>
+        <tr>
+          <td>Google Play Games</td>
+          <td class="demo-yes">✓ Yes</td>
+          <td class="demo-no">— Not confirmed</td>
+          <td>July 7, 2026</td>
+          <td>Marvelous USA</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Demo and Full Game — Tracked Separately</h2>
+        <p>The demo is a separate download and experience from the full game. This page tracks both, but does not claim cross-save, cross-play, or platform feature parity.</p>
+      </div>
+    </div>
+
+    <div class="check-list">
+      <div class="check-item hold">
+        <div class="check-num">✗</div>
+        <div class="check-text">
+          <strong>Demo progress carryover</strong>
+          <p>No official confirmation has been published about whether demo save data transfers to the full game. Check official Steam announcements before assuming either way.</p>
+        </div>
+        <span class="check-badge warn">Not confirmed</span>
+      </div>
+      <div class="check-item hold">
+        <div class="check-num">✗</div>
+        <div class="check-text">
+          <strong>Cross-save or cross-play</strong>
+          <p>This page does not claim cross-save or cross-play between platforms. No official source has confirmed these for Moonlight Peaks as of July 10, 2026.</p>
+        </div>
+        <span class="check-badge warn">Not confirmed</span>
+      </div>
+      <div class="check-item hold">
+        <div class="check-num">✗</div>
+        <div class="check-text">
+          <strong>Platform feature parity</strong>
+          <p>No official source confirms that all platforms have identical features, performance, or content. This page does not publish platform comparisons.</p>
+        </div>
+        <span class="check-badge warn">Not confirmed</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Regional Platform Notes</h2>
+        <p>Key regional distinctions from official and verified sources.</p>
+      </div>
+    </div>
+
+    <div class="check-list">
+      <div class="check-item done">
+        <div class="check-num">1</div>
+        <div class="check-text">
+          <strong>Americas / EU / Steam — July 7, 2026</strong>
+          <p>Marvelous USA and official Moonlight Peaks site list July 7, 2026 for Windows PC, Nintendo Switch, Nintendo Switch 2, and Google Play Games.</p>
+        </div>
+        <span class="check-badge good">Official source</span>
+      </div>
+      <div class="check-item done">
+        <div class="check-num">2</div>
+        <div class="check-text">
+          <strong>Hong Kong / Taiwan / Korea — July 9, 2026</strong>
+          <p>Clouded Leopard Entertainment's regional page lists July 9, 2026 for Nintendo Switch and Nintendo Switch 2. This date applies only to these specific regions.</p>
+        </div>
+        <span class="check-badge good">Official source (regional)</span>
+      </div>
+      <div class="check-item hold">
+        <div class="check-num">3</div>
+        <div class="check-text">
+          <strong>Switch 2 backward compatibility</strong>
+          <p>The Nintendo Switch demo is playable on Nintendo Switch 2. The Switch full game may also be playable on Switch 2 via backward compatibility, but this specific detail should be confirmed against Nintendo or Marvelous compatibility listings.</p>
+        </div>
+        <span class="check-badge warn">Needs confirmation</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <EvidenceBadge status="official-confirmed" lastChecked={SITE.lastChecked} gameVersion="post-launch" />
+    <p style="margin-top: 10px; font-size: 13px; color: var(--quiet);">
+      Sources: Steam store live July 10 (moonlight-steam-store-live-2026-07) · Marvelous Europe June 2026 announcement (moonlight-marvelous-eu-demo-2026-06) · Clouded Leopard regional page (moonlight-clouded-leopard-page)
+    </p>
+  </section>
+</Base>

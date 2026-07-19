@@ -1,0 +1,95 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
+---
+
+<Base title="Contact and Corrections" noindex={false}>
+  <div class="hero-grid">
+    <div class="panel hero">
+      <span class="eyebrow"><span class="dot"></span> Contact</span>
+      <h1>Contact &amp;<br/>Corrections</h1>
+      <p class="lead">Found an error, outdated fact, or have a verified source update? This page explains how to submit corrections and what to expect.</p>
+    </div>
+  </div>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>What we correct</h2>
+      </div>
+    </div>
+    <p style="margin-bottom: 16px;">We review and correct:</p>
+    <ul style="list-style: disc; padding-left: 20px; display: grid; gap: 8px; color: var(--muted); font-size: 14px; line-height: 1.6;">
+      <li>Factual errors where official sources contradict published claims</li>
+      <li>Outdated release dates, platform availability, or demo status</li>
+      <li>Misrepresented source-log IDs or confidence levels</li>
+      <li>Missing official sources that should have been included</li>
+    </ul>
+    <p style="margin-top: 16px;">We do not publish corrections that cannot be verified against original sources. If your correction cannot be confirmed, it will be marked as held pending verification.</p>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>What we do not handle</h2>
+      </div>
+    </div>
+    <ul style="list-style: none; display: grid; gap: 10px; font-size: 14px;">
+      <li class="check-item hold" style="grid-template-columns: 1fr;">
+        <div class="check-text">
+          <strong>Game support requests</strong>
+          <p>This site does not provide玩家 support. For game issues, contact Little Chicken Game Company or Marvelous/XSEED directly.</p>
+        </div>
+      </li>
+      <li class="check-item hold" style="grid-template-columns: 1fr;">
+        <div class="check-text">
+          <strong>Domain or trademark requests</strong>
+          <p>Domain and trademark matters are handled separately through the appropriate legal channels.</p>
+        </div>
+      </li>
+      <li class="check-item hold" style="grid-template-columns: 1fr;">
+        <div class="check-text">
+          <strong>Content removal for SEO purposes</strong>
+          <p>Corrections are accepted on factual and evidence-policy grounds only. We do not remove content for search ranking purposes.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>How to submit</h2>
+    </div>
+    <p style="margin-bottom: 16px;">To submit a correction or source update, send an email with:</p>
+    <ol style="list-style: decimal; padding-left: 20px; display: grid; gap: 8px; color: var(--muted); font-size: 14px; line-height: 1.6;">
+      <li><strong>The page and specific claim</strong> — include the URL and the text you believe is incorrect</li>
+      <li><strong>Your source</strong> — official source URL, press release, or documentation that supports the correction</li>
+      <li><strong>Your relationship to the content</strong> — optional; e.g., player, developer, press</li>
+    </ol>
+    <p style="margin-top: 16px;">We review submissions within the session window and update the evidence pack and relevant pages. We do not share submission details with third parties.</p>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Response timeline</h2>
+    </div>
+    <p>Corrections submitted via the operator channel are reviewed during active sessions. There is no guaranteed response time for non-urgent submissions.</p>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>No sensitive data collected</h2>
+      </div>
+    </div>
+    <p>This site does not use analytics, tracking scripts, cookies, or forms that collect personal data. Correction emails are handled through the operator's private email channel and are not processed through this site.</p>
+  </section>
+
+  <section class="panel section">
+    <p style="font-size: 13px; color: var(--quiet);">
+      <strong>{SITE.title}</strong> · No direct contact form · Corrections via operator channel · <a href="/editorial/" style="color: var(--accent);">Editorial policy</a> · <a href="/privacy/" style="color: var(--accent);">Privacy policy</a>
+    </p>
+  </section>
+</Base>

@@ -1,0 +1,116 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
+---
+
+<Base title="About" noindex={false}>
+  <div class="hero-grid">
+    <div class="panel hero">
+      <span class="eyebrow"><span class="dot"></span> About</span>
+      <h1>About<br/>Moonlight Peaks Compass</h1>
+      <p class="lead">An independent, source-backed launch and demo status site for Moonlight Peaks — not affiliated with Little Chicken Game Company, XSEED, Marvelous, or Clouded Leopard Entertainment.</p>
+    </div>
+  </div>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>What is this site?</h2>
+      </div>
+    </div>
+    <p style="margin-bottom: 16px;">Moonlight Peaks Compass is a continuing post-launch guide hub for Moonlight Peaks players. It helps answer the most common questions after launch:</p>
+    <ul style="list-style: disc; padding-left: 20px; display: grid; gap: 8px; color: var(--muted); font-size: 14px; line-height: 1.6;">
+      <li>What is the current official update or patch status?</li>
+      <li>Is there a demo, and does demo progress carry over?</li>
+      <li>Which platforms have the game and demo?</li>
+      <li>What should I check before buying or downloading?</li>
+    </ul>
+    <p style="margin-top: 16px;">This is not a full wiki, database, walkthrough site, romance-dating resource, or crop/recipe database. Topics without verified official or hands-on support are intentionally held.</p>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Unofficial status</h2>
+      </div>
+    </div>
+    <p style="margin-bottom: 16px;"><strong>Moonlight Peaks Compass</strong> is not affiliated with, endorsed by, or connected to:</p>
+    <ul style="list-style: none; display: grid; gap: 8px; font-size: 14px;">
+      <li class="check-item" style="grid-template-columns: 1fr;">
+        <span>Little Chicken Game Company (developer)</span>
+      </li>
+      <li class="check-item" style="grid-template-columns: 1fr;">
+        <span>XSEED Games / Marvelous USA (publisher)</span>
+      </li>
+      <li class="check-item" style="grid-template-columns: 1fr;">
+        <span>Marvelous Europe (publisher)</span>
+      </li>
+      <li class="check-item" style="grid-template-columns: 1fr;">
+        <span>Clouded Leopard Entertainment (regional publisher)</span>
+      </li>
+      <li class="check-item" style="grid-template-columns: 1fr;">
+        <span>Bandai Namco or any other platform holder</span>
+      </li>
+    </ul>
+    <p style="margin-top: 16px;">All game facts on this site are sourced from publicly available official sources and are marked with source-log IDs. No confidential information is used.</p>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Content boundaries</h2>
+      </div>
+    </div>
+    <div class="can-cannot">
+      <div class="can-card">
+        <h3>✓ This site publishes</h3>
+        <ul>
+          <li>Official demo availability and platform information</li>
+          <li>Official launch dates with regional source labels</li>
+          <li>Official gameplay premise (vampire life sim, supernatural locals)</li>
+          <li>Source confidence labels on every factual claim</li>
+          <li>Clear "not hands-on tested" labels where appropriate</li>
+          <li>Held-claims table explaining what is not yet published</li>
+        </ul>
+      </div>
+      <div class="cannot-card">
+        <h3>✗ This site does NOT publish</h3>
+        <ul>
+          <li>Romance gifts, dating routes, or heart events</li>
+          <li>Full character lists or villager profiles</li>
+          <li>Crop tables, recipes, prices, or growth times</li>
+          <li>Exact demo walkthrough or task sequences</li>
+          <li>Save transfer or demo progress carryover claims</li>
+          <li>Official screenshots, Steam art, or media assets</li>
+          <li>Invented facts or unsourced gameplay details</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Guide Hub status</h2>
+      </div>
+    </div>
+    <p style="margin-bottom: 16px;">Moonlight Peaks Compass is a continuing guide hub running on the formal domain <strong>peakscompass.com</strong>. The site is maintained post-launch and updated as new official sources become available. One sponsored content unit may appear on some pages — see the Privacy Policy for details.</p>
+    <p>Content decisions follow the evidence policy: no invented facts, no unsourced claims, no content copied from wiki or community sources without verification against official sources.</p>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Corrections and updates</h2>
+      </div>
+    </div>
+    <p style="margin-bottom: 16px;">If you find an error — a fact that is wrong, a source that is misrepresented, or something that has changed since the last check — please use the <a href="/contact/" style="color: var(--accent);">contact page</a>.</p>
+    <p>All corrections are reviewed against original sources before being applied. We do not publish unverified corrections.</p>
+  </section>
+
+  <section class="panel section">
+    <p style="font-size: 13px; color: var(--quiet);">
+      <strong>{SITE.title}</strong> · Post-launch Guide Hub · Last checked: {SITE.lastChecked} · Evidence pack retrieval date: {SITE.lastChecked}
+    </p>
+  </section>
+</Base>

@@ -1,0 +1,138 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
+---
+
+<Base title="Editorial and Evidence Policy" noindex={false}>
+  <div class="hero-grid">
+    <div class="panel hero">
+      <span class="eyebrow"><span class="dot"></span> Editorial Policy</span>
+      <h1>Editorial &amp;<br/>Evidence Policy</h1>
+      <p class="lead">Every fact on this site is labeled with its source tier and verification status. This page explains the standards applied to all content.</p>
+    </div>
+  </div>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Verification status labels</h2>
+      </div>
+    </div>
+
+    <div class="check-list">
+      <div class="check-item done" style="grid-template-columns: 1fr;">
+        <div class="check-text">
+          <strong style="color: var(--good);">Source Confirmed</strong>
+          <p>Verified against official sources (official site, official press release, official platform page). No hands-on testing required to publish these facts.</p>
+        </div>
+      </div>
+      <div class="check-item done" style="grid-template-columns: 1fr;">
+        <div class="check-text">
+          <strong style="color: var(--warn);">Source Backed</strong>
+          <p>From official sources but not yet hands-on tested by this site. Published with a "not hands-on tested" label. Facts are accurate to official descriptions but specific interactions or values may differ in practice.</p>
+        </div>
+      </div>
+      <div class="check-item done" style="grid-template-columns: 1fr;">
+        <div class="check-text">
+          <strong style="color: var(--warn);">Partial</strong>
+          <p>Some facts come from official confirmed sources; other points require hands-on testing or cross-checking. Clearly labeled so readers know what is solid and what is pending.</p>
+        </div>
+      </div>
+      <div class="check-item done" style="grid-template-columns: 1fr;">
+        <div class="check-text">
+          <strong style="color: var(--accent);">Status Page</strong>
+          <p>Tracks external source status (e.g., release dates from official pages). Not treated as final game facts — re-checking is required as launch approaches.</p>
+        </div>
+      </div>
+      <div class="check-item done" style="grid-template-columns: 1fr;">
+        <div class="check-text">
+          <strong style="color: var(--quiet);">Needs Playtest</strong>
+          <p>Requires hands-on demo testing before details can be published. This label means: official sources describe the feature but the specific details are not yet verified for accuracy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Source tiers</h2>
+      </div>
+    </div>
+
+    <div class="check-list">
+      <div class="check-item done" style="grid-template-columns: 1fr;">
+        <div class="check-text">
+          <strong style="color: var(--good);">Official / A-tier</strong>
+          <p>Official game website, official press release, official platform store page. Used as primary source for all published facts.</p>
+        </div>
+      </div>
+      <div class="check-item done" style="grid-template-columns: 1fr;">
+        <div class="check-text">
+          <strong style="color: var(--accent);">Press lead / B-tier</strong>
+          <p>Verified press coverage (e.g., PC Gamer, RPGamer). Used for player-pain leads and cross-checking. Labeled as press leads. Not used as the sole source for publishable facts unless confirmed by official sources too.</p>
+        </div>
+      </div>
+      <div class="check-item done" style="grid-template-columns: 1fr;">
+        <div class="check-text">
+          <strong style="color: var(--warn);">Community lead / C-tier</strong>
+          <p>Reddit threads, Discord, wiki.gg, Fandom. Used only to identify SERP supply and content gaps. No community content is copied, paraphrased, or used as a publishable source of facts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Content rules</h2>
+    </div>
+
+    <div class="can-cannot">
+      <div class="can-card">
+        <h3>✓ Required for publication</h3>
+        <ul>
+          <li>Every factual claim traces to a source-log ID</li>
+          <li>Every page shows its verification status</li>
+          <li>Every page shows its last-checked date</li>
+          <li>Press leads are labeled as press leads, not official facts</li>
+          <li>Held claims are listed in a visible table with reasons</li>
+          <li>Corrections path is available via the contact page</li>
+        </ul>
+      </div>
+      <div class="cannot-card">
+        <h3>✗ Never published without</h3>
+        <ul>
+          <li>Romance gifts, dating routes — official source or hands-on testing</li>
+          <li>Exact demo walkthrough — hands-on testing</li>
+          <li>Save transfer / carryover — official source or hands-on testing</li>
+          <li>Crop/recipe tables — hands-on testing or official game data</li>
+          <li>Official images or screenshots — verified media-use license</li>
+          <li>Invented gameplay values — never published</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Correction policy</h2>
+      </div>
+    </div>
+    <p style="margin-bottom: 16px;">If a reader or the game developer notifies us of an error:</p>
+    <ol style="list-style: decimal; padding-left: 20px; display: grid; gap: 8px; color: var(--muted); font-size: 14px; line-height: 1.6;">
+      <li>The claim is checked against the original source-log entry</li>
+      <li>If the source is wrong or outdated, the page is corrected and the source-log is updated</li>
+      <li>If the correction requires hands-on testing to resolve, the claim is moved to "held" until testing confirms it</li>
+      <li>Corrections are noted in the page's evidence badge with a new last-checked date</li>
+    </ol>
+    <p style="margin-top: 16px;">We do not publish unverified corrections. If a claim cannot be confirmed, it is held, not guessed.</p>
+  </section>
+
+  <section class="panel section">
+    <p style="font-size: 13px; color: var(--quiet);">
+      Policy version: 1.0 · Effective: {SITE.lastChecked} · Questions: <a href="/contact/" style="color: var(--accent);">Contact page</a>
+    </p>
+  </section>
+</Base>

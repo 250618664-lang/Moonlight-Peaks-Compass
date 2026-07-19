@@ -1,0 +1,183 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
+---
+
+<Base title="Sources and Held Claims" noindex={false}>
+  <div class="hero-grid">
+    <div class="panel hero">
+      <span class="eyebrow"><span class="dot"></span> Trust &amp; Transparency</span>
+      <h1>Sources &amp;<br/>Held Claims</h1>
+      <p class="lead">Every published fact traces to a source-log ID. This page explains source tiers, lists official sources used, and documents claims that are intentionally not published.</p>
+    </div>
+
+    <aside class="panel side">
+      <div class="mini">
+        <h3>Source Tiers</h3>
+        <p><strong style="color: var(--good);">Official / A-tier</strong> — official site, official press release, official platform page</p>
+        <p><strong style="color: var(--accent);">Press lead / B-tier</strong> — verified press coverage used for leads, not as sole source</p>
+        <p><strong style="color: var(--warn);">Community lead / C-tier</strong> — Reddit, wiki, Discord; used only to identify SERP gaps</p>
+        <p><strong style="color: var(--quiet);">Held</strong> — not published until official confirmation or hands-on testing</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Source Registry</h2>
+        <p>All sources used in this guide hub. No source-log entry = not published.</p>
+      </div>
+    </div>
+
+    <div class="source-card">
+      <h3>Official Sources (A-tier)</h3>
+      <div class="source-row">
+        <strong>moonlight-official-site</strong>
+        <span>Official Moonlight Peaks website · moonlightpeaks.com · Used for: identity, launch date, demo availability, gameplay premise</span>
+      </div>
+      <div class="source-row">
+        <strong>moonlight-steam-store</strong>
+        <span>Steam store page · store.steampowered.com/app/2209900/Moonlight_Peaks/ · Used for: release date, demo button, game description</span>
+      </div>
+      <div class="source-row">
+        <strong>moonlight-marvelous-usa-game-page</strong>
+        <span>Marvelous USA game page · marvelous-usa.com/games/moonlight-peaks/ · Used for: platform list, genre, player count, developer, rating descriptors</span>
+      </div>
+      <div class="source-row">
+        <strong>moonlight-marvelous-usa-platforms-2026-03</strong>
+        <span>Marvelous USA press release (March 2026) · simultaneous July 7 launch across platforms · Used for: Americas launch date, platform confirmation</span>
+      </div>
+      <div class="source-row">
+        <strong>moonlight-marvelous-eu-demo-2026-06</strong>
+        <span>Marvelous Europe demo announcement (June 2026) · marvelousgames.com · Used for: demo scope, Switch/Switch 2 availability, regional pricing note</span>
+      </div>
+      <div class="source-row">
+        <strong>moonlight-clouded-leopard-page</strong>
+        <span>Clouded Leopard Entertainment regional page · cloudedleopardent.com/game/moonlightpeaks/en/ · Used for: HK/TW/KR regional July 9 date, Switch/Switch 2 demo availability</span>
+      </div>
+      <div class="source-row">
+        <strong>moonlight-steam-known-issues-2026-07-09</strong>
+        <span>Official Steam Known Issues notice · July 9, 2026 · Used for: confirming an official launch-support notice exists. Image-only issue details are not republished.</span>
+      </div>
+      <div class="source-row">
+        <strong>moonlight-steam-patch-1-1-38-2026-07-10</strong>
+        <span>Official Steam Patch 1.1.38 notes · July 10, 2026 · Used for: three explicitly listed fixes.</span>
+      </div>
+      <div class="source-row">
+        <strong>moonlight-marvelous-patch-1-1-41-1-1-44-2026-07-15</strong>
+        <span>Official Marvelous patch page · July 15/16, 2026 · Used for: Patch 1.1.41 loading/storage/quick-transfer/seed-label/embroidery-access improvements; Patch 1.1.44 embroidery-table/loading/tree-seed/table-removal/crops/Steam-save fixes; dated platform-version rollout snapshot (Steam 1.1.41 live; Switch/Switch 2/Google Play at 1.1.3 — update to follow).</span>
+      </div>
+      <div class="source-row">
+        <strong>moonlight-youtube-release-date-trailer-2026-03</strong>
+        <span>Official release-date trailer linked by the official Steam announcement page · Link and view snapshot only; no thumbnail, frames, or transcript reused.</span>
+      </div>
+    </div>
+
+    <div class="source-card">
+      <h3>Press Sources (B-tier — leads only)</h3>
+      <div class="source-row">
+        <strong>moonlight-pcgamer-demo-2026-06</strong>
+        <span>PC Gamer preview · pcgamer.com · Used for: controller recommendation (labeled as press lead), purchase-decision framing (labeled). Not used as sole source for gameplay facts.</span>
+      </div>
+      <div class="source-row">
+        <strong>moonlight-rpgamer-demo-2026-06</strong>
+        <span>RPGamer demo coverage · rpgamer.com · Used for: cross-checking demo/pricing facts. North American pricing needs first-party store cross-check before publication.</span>
+      </div>
+    </div>
+
+    <div class="source-card">
+      <h3>Community Sources (C-tier — SERP gap identification only)</h3>
+      <div class="source-row">
+        <strong>moonlight-wikigg</strong>
+        <span>Moonlight Peaks Wiki on wiki.gg · moonlightpeaks.wiki.gg/ · NOT used as a source for published facts. Used only to identify SERP supply and possible content gaps. No wiki content copied.</span>
+      </div>
+      <div class="source-row">
+        <strong>moonlight-fandom</strong>
+        <span>Moonlight Peaks Fandom Wiki · moonlightpeaks.fandom.com/ · NOT used as a source. No page structure, lists, images, or tables copied from Fandom.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Held Claims</h2>
+        <p>Topics not published in v0.1. Each has a reason and a condition for future publication.</p>
+      </div>
+    </div>
+
+    <table class="held-table">
+      <thead>
+        <tr>
+          <th>Topic</th>
+          <th>Why Held</th>
+          <th>Publication Condition</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="topic">Romance gifts &amp; dating routes</td>
+          <td class="reason">Official sources confirm romance exists but do not detail gift preferences, heart events, or romance routes. SERP already covered by wiki/Fandom.</td>
+          <td><span class="held-tag">Needs gameplay</span></td>
+        </tr>
+        <tr>
+          <td class="topic">Full character / villager list</td>
+          <td class="reason">Official site confirms werewolves, witches, and mermaids. Specific names, portraits, schedules not published without official source or hands-on testing.</td>
+          <td><span class="held-tag">Needs official or gameplay</span></td>
+        </tr>
+        <tr>
+          <td class="topic">Crop tables, recipes, prices, growth times</td>
+          <td class="reason">Official sources confirm "mystical crops" and "potion-making." Specific crop/recipe/price data not published without hands-on testing or official table.</td>
+          <td><span class="held-tag">Needs gameplay</span></td>
+        </tr>
+        <tr>
+          <td class="topic">Exact demo walkthrough</td>
+          <td class="reason">Official demo scope is described (character creation, mini-games, resident interactions). Exact task sequence or progression not published without hands-on testing.</td>
+          <td><span class="held-tag">Needs gameplay</span></td>
+        </tr>
+        <tr>
+          <td class="topic">Save transfer / demo progress carryover</td>
+          <td class="reason">No official source confirms whether demo save data carries over to the full game. Requires hands-on testing or official FAQ confirmation.</td>
+          <td><span class="held-tag">Needs official or gameplay</span></td>
+        </tr>
+        <tr>
+          <td class="topic">North American pricing &amp; upgrade pack</td>
+          <td class="reason">RPGamer reported North American prices. This should be cross-checked against first-party store pages before publication as a confirmed fact.</td>
+          <td><span class="held-tag">Needs first-party confirmation</span></td>
+        </tr>
+        <tr>
+          <td class="topic">Google Play Games demo</td>
+          <td class="reason">Full game is listed for Google Play Games. Demo availability for this platform is not confirmed by official sources.</td>
+          <td><span class="held-tag">Needs official confirmation</span></td>
+        </tr>
+        <tr>
+          <td class="topic">Official images, screenshots, key art</td>
+          <td class="reason">All image assets found (official site, Steam, press kits) are All Rights Reserved. No verified media-use license found. No images downloaded or published.</td>
+          <td><span class="held-tag">Needs verified media license</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>SERP Supply Note</h2>
+        <p>Why some topics are not pursued as content gaps. This guide hub focuses on official updates, demo status, platform availability, and release dates — not the wiki-style content that existing SERP sources already cover well.</p>
+      </div>
+    </div>
+    <div class="check-item hold" style="grid-template-columns: 1fr;">
+      <div class="check-text">
+        <strong>Character, romance, and crop pages are already well-covered</strong>
+        <p>wiki.gg and Fandom already provide character lists, romance information, and crop/recipe content. These intents are not treated as clean gaps. This guide hub focuses on the official updates / demo status / platform availability angle, which is less covered by existing wiki-style pages.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <p style="font-size: 13px; color: var(--quiet);">
+      Last updated: {SITE.lastChecked} · Source-log IDs include official site/store/publisher pages, official Steam launch and patch announcements, the official release-date trailer link, labeled press leads, and community sources used only for gap discovery.
+    </p>
+  </section>
+</Base>

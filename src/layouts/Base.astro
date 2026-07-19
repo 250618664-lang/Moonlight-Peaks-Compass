@@ -1,0 +1,77 @@
+---
+import '../styles/global.css';
+import { SITE, NAV } from '../data/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = SITE.description,
+  canonical,
+  noindex = false,
+} = Astro.props;
+
+const pageTitle = title ? `${title} | ${SITE.title}` : SITE.title;
+const canonicalUrl = canonical ? new URL(canonical, Astro.site) : Astro.url;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="canonical" href={canonicalUrl} />
+    <!-- Open Graph -->
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <!-- Sitemap -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <!-- SVG Favicon (moon crescent, no image file) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230c0a10'/><circle cx='55' cy='45' r='30' fill='none' stroke='%23b87fce' stroke-width='10'/><circle cx='55' cy='45' r='22' fill='%230c0a10'/></svg>" />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="/">
+          <span class="mark" aria-hidden="true"></span>
+          <span class="brand-text">
+            <strong>{SITE.gameName} Compass</strong>
+            <span>{SITE.platform} · Unofficial</span>
+          </span>
+        </a>
+        <nav class="nav" aria-label="Primary navigation">
+          {NAV.map(item => (
+            <a
+              href={item.url}
+              class={Astro.url.pathname === item.url ? 'active' : ''}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </header>
+
+    <main id="content" class="shell">
+      <slot />
+    </main>
+
+    <footer class="shell" style="padding-top: 0; padding-bottom: 32px;">
+      <p class="footer-note">
+        <strong>{SITE.title}</strong> is an unofficial player helper, not affiliated with {SITE.publisher} or {SITE.developer}.<br />
+        All game facts are source-backed and marked with verification status. This is a post-launch guide hub. Analytics are off.
+      </p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
+---
+
+<Base title="Privacy" noindex={false}>
+  <div class="hero-grid">
+    <div class="panel hero">
+      <span class="eyebrow"><span class="dot"></span> Privacy</span>
+      <h1>Privacy<br/>Policy</h1>
+      <p class="lead">This is a static informational site. It does not collect, store, or share personal data.</p>
+    </div>
+  </div>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>What this site does not do</h2>
+      </div>
+    </div>
+
+    <div class="check-list">
+      <div class="check-item done" style="grid-template-columns: 1fr;">
+        <div class="check-text">
+          <strong>No analytics</strong>
+          <p>No Google Analytics, Plausible, Fathom, or any other analytics service is installed. Page views and traffic are not tracked.</p>
+        </div>
+      </div>
+      <div class="check-item done" style="grid-template-columns: 1fr;">
+        <div class="check-text">
+          <strong>No cookies</strong>
+          <p>No HTTP cookies are set. No session tracking, no preference storage, no login state.</p>
+        </div>
+      </div>
+      <div class="check-item done" style="grid-template-columns: 1fr;">
+        <div class="check-text">
+          <strong>Sponsored content</strong>
+          <p>One native advertising unit per page may appear on this site. It is identified as sponsored content and does not affect editorial decisions. No personal data is shared with the ad network beyond standard server metadata.</p>
+        </div>
+      </div>
+      <div class="check-item done" style="grid-template-columns: 1fr;">
+        <div class="check-text">
+          <strong>No forms or data collection</strong>
+          <p>No contact forms, comment sections, email collection, or newsletter signups. This privacy page is the only interaction mechanism.</p>
+        </div>
+      </div>
+      <div class="check-item done" style="grid-template-columns: 1fr;">
+        <div class="check-text">
+          <strong>Limited third-party scripts</strong>
+          <p>One native ad network script runs on some pages. No analytics, social widgets, or tracking pixels are installed. Only system fonts and inline SVG are used for design elements.</p>
+        </div>
+      </div>
+      <div class="check-item done" style="grid-template-columns: 1fr;">
+        <div class="check-text">
+          <strong>No personal data shared</strong>
+          <p>No data is shared with any third party because no data is collected. This site has no analytics provider, ad network, or data broker relationship.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Hosting and infrastructure</h2>
+      </div>
+    </div>
+    <p style="margin-bottom: 16px;">This site is currently deployed on Vercel's platform. Vercel's infrastructure may log standard server metadata (IP addresses, request paths, user-agent strings) as part of their normal service operation. This site does not use Vercel Analytics or any optional data collection features.</p>
+    <p>For Vercel's privacy policy: <a href="https://vercel.com/legal/privacy-policy" style="color: var(--accent);" rel="noopener noreferrer">vercel.com/legal/privacy-policy</a></p>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>External links</h2>
+      </div>
+    </div>
+    <p style="margin-bottom: 16px;">This site links to official game websites, Steam, and press sources. These are external sites with their own privacy policies. This site does not control and is not responsible for the privacy practices of any linked external site.</p>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Policy changes</h2>
+      </div>
+    </div>
+    <p>If this site is updated to change its data collection, advertising, or analytics state, this privacy policy will be updated before the new functionality goes live.</p>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Version</h2>
+      </div>
+    </div>
+    <p>Policy version 1.0 · Effective date: {SITE.lastChecked} · <a href="/about/" style="color: var(--accent);">About this site</a> · <a href="/contact/" style="color: var(--accent);">Corrections</a></p>
+  </section>
+</Base>

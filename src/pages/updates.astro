@@ -1,0 +1,543 @@
+---
+import Base from '../layouts/Base.astro';
+import EvidenceBadge from '../components/EvidenceBadge.astro';
+import AdSlot from '../components/AdSlot.astro';
+import { UPDATE_STATUS } from '../data/claims';
+import { SITE } from '../data/site';
+
+// FAQPage JSON-LD is output only when explicitly approved.
+// Default false — must be manually approved after visual FAQ and JSON-LD are confirmed identical.
+const faqSchemaApproved = false;
+---
+<script is:inline type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://peakscompass.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Official Updates", "item": "https://peakscompass.com/updates/" }
+  ]
+}
+</script>
+{faqSchemaApproved && <script is:inline type="application/ld+json">
+{`{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the latest patch for Moonlight Peaks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Patch 1.1.44 is the latest published, released on Steam on July 16, 2026. It fixes embroidery-table visibility, loading after a house upgrade, tree-seed planting in seasons, table or shelf inventory removal, crops growing on rainy nights, and a Steam save-corruption case when exiting during a save."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Has Patch 1.1.41 rolled out to all platforms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The July 15 official version table showed Steam at 1.1.41 live worldwide and Nintendo Switch, Nintendo Switch 2, and Google Play at 1.1.3 with the update to follow. This is a dated snapshot — current platform versions may differ. Check the official patch page for the latest status."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there any known issues still being worked on?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The official July 15/16 patch page says other known issues remain under investigation and that more details will be shared later. No specific list or timeline has been published for these remaining issues."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I find the official patch notes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The official Marvelous patch page at marvelousgames.com/news/moonlight-peaks-patch-notes-07-15 covers both the 1.1.41 improvements and the 1.1.44 fixes. Steam announcement channel also carries official notices."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the demo progress carry over to the full game?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No direct first-party confirmation about demo save carryover has been registered in the sources for this guide as of July 19, 2026. Check the Demo Status page for the full explanation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the game still getting updates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Three patches have been released since launch (1.1.38 on July 10, 1.1.41 on July 15, 1.1.44 on July 16), and the developer has indicated other known issues are still under investigation. The cadence and scope of future updates has not been announced."
+      }
+    }
+  ]
+}`}
+</script>}
+
+<Base title="Official Updates" description="Moonlight Peaks official updates, patch notes, and support status. Covers Patch 1.1.44, 1.1.41, known issues, and future update outlook — source-backed only." noindex={false}>
+  <div class="hero-grid">
+    <div class="panel hero">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+        <a href="/">Home</a><span class="sep">›</span><span>Official Updates</span>
+      </nav>
+      <span class="eyebrow"><span class="dot"></span> Official Updates · Source Confirmed</span>
+      <h1>Moonlight Peaks<br/>Official Updates &amp; Patch Status</h1>
+      <p class="lead">Confirmed official updates and support announcements for Moonlight Peaks. Covers Patch 1.1.44, the July 15 platform rollout snapshot, and what the developer has said about future fixes. Only A-level official sources.</p>
+
+      <div class="answer-strip">
+        <div class="answer-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div>
+          <strong>Latest: Patch 1.1.44</strong>
+          <span>Published July 16 on Steam. Fixes embroidery-table visibility, house-upgrade loading, tree-seed planting, table removal, rainy-night crops, and a Steam save-corruption case. Platform updates still rolling out — see rollout table below.</span>
+        </div>
+      </div>
+    </div>
+
+    <aside class="panel side">
+      <h2>Quick Facts</h2>
+      <div class="status-grid" style="margin-top: 0;">
+        <div class="status-card good full">
+          <h3>Patch 1.1.44 — Latest</h3>
+          <p>Steam fix patch published July 16. Six fixes listed. Steam save-corruption fix is Steam-only.</p>
+        </div>
+        <div class="status-card info full">
+          <h3>Patch 1.1.41 — July 15</h3>
+          <p>Loading, storage, quick-transfer, seed-label, embroidery-access improvements. Steam live worldwide; other platforms at 1.1.3 with update to follow.</p>
+        </div>
+        <div class="status-card warn full">
+          <h3>Known Issues</h3>
+          <p>Developer says other issues remain under investigation. No dated roadmap or exact schedule published.</p>
+        </div>
+        <div class="status-card muted full">
+          <h3>Demo Carryover</h3>
+          <p>No direct first-party answer registered as of July 19. <a href="/demo/" style="color: var(--accent);">See /demo/ →</a></p>
+        </div>
+      </div>
+      <div style="height: 1px; background: var(--line); margin: 4px 0;"></div>
+      <div class="mini">
+        <h3>Source Links</h3>
+        <p><a href="https://marvelousgames.com/news/moonlight-peaks-patch-notes-07-15" style="color: var(--accent);" target="_blank" rel="noopener">→ Official patch page (July 15/16)</a></p>
+        <p><a href="https://store.steampowered.com/app/2209900/Moonlight_Peaks/" style="color: var(--accent);" target="_blank" rel="noopener">→ Steam store page</a></p>
+        <p><a href="https://steamcommunity.com/app/2209900/announcements/?l=english" style="color: var(--accent);" target="_blank" rel="noopener">→ Official Steam announcements</a></p>
+      </div>
+      <div style="height: 1px; background: var(--line); margin: 4px 0;"></div>
+      <div class="mini">
+        <h3>See also</h3>
+        <p><a href="/demo/" style="color: var(--accent);">→ Demo Status</a></p>
+        <p><a href="/switch-steam/" style="color: var(--accent);">→ Platform Status</a></p>
+        <p><a href="/release-date/" style="color: var(--accent);">→ Release Dates</a></p>
+        <p><a href="/starter-checklist/" style="color: var(--accent);">→ Starter Checklist</a></p>
+      </div>
+    </aside>
+  </div>
+
+  <AdSlot />
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Patch Timeline</h2>
+        <p>All entries from A-level official sources. No community reports or patch speculation.</p>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">March 2, 2026</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Platform Announcement — July 7 Launch Confirmed</div>
+          <p>Marvelous USA announced Moonlight Peaks for a simultaneous July 7, 2026 launch across Windows PC, Nintendo Switch, Nintendo Switch 2, and Google Play Games. Little Chicken Game Company is the developer.</p>
+          <span class="check-badge good">Marvelous USA official press release</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">June 2026</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Demo Announced — PC and Switch</div>
+          <p>Marvelous Europe announced a new demo for Moonlight Peaks on Windows PC and Nintendo Switch. The Switch demo is also playable on Nintendo Switch 2 via backward compatibility.</p>
+          <span class="check-badge good">Marvelous Europe official press release</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">July 6, 2026</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Steam Store — Released</div>
+          <p>The Steam store page was marked with a July 6, 2026 release date. The demo download section was visible at this time.</p>
+          <span class="check-badge good">Steam store page</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">July 7, 2026</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Available Now — Official Steam Announcement</div>
+          <p>The official Steam announcement channel published an "Available Now" post for Moonlight Peaks.</p>
+          <span class="check-badge good">Official Steam announcements</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">July 9, 2026</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Official Known Issues Notice</div>
+          <p>The official Steam announcement channel published a Known Issues notice. The developer said fixes for some issues were expected within days and others the following week. Issue details are image-based on the source page.</p>
+          <a class="check-badge good" href="https://steamcommunity.com/gid/103582791473036604/announcements/detail/670621050832165822" target="_blank" rel="noopener">Open official Steam announcement</a>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">July 10, 2026</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Patch 1.1.38</div>
+          <p>Official notes list fixes for: recurring short freezes every 5–20 seconds; slow-walking state after exiting doors; soft lock during the "new card" sequence in Nokturna.</p>
+          <a class="check-badge good" href="https://steamcommunity.com/gid/103582791473036604/announcements/detail/696518197582496672" target="_blank" rel="noopener">Read official patch notes</a>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">July 9, 2026</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Regional Launch — Hong Kong / Taiwan / Korea</div>
+          <p>Clouded Leopard Entertainment released Moonlight Peaks for Nintendo Switch and Nintendo Switch 2 in Hong Kong, Taiwan, and Korea on July 9, 2026.</p>
+          <span class="check-badge good">Clouded Leopard Entertainment (regional)</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">July 15, 2026</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Patch 1.1.41 — Steam Worldwide</div>
+          <p>Official patch page describes 1.1.41 as launching on Steam first with loading improvements, storage improvements, quick-transfer improvements, seed-label fixes, embroidery-access improvements, and general bug fixes. The dated July 15 version table listed Steam at 1.1.41 live worldwide and Nintendo Switch, Nintendo Switch 2, and Google Play at 1.1.3 with their update to follow.</p>
+          <span class="check-badge good">Official Marvelous patch page (moonlight-marvelous-patch-1-1-41-1-1-44-2026-07-15)</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">July 16, 2026</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Patch 1.1.44 — Steam Fix Patch</div>
+          <p>The official patch page's July 16 section lists fixes for: embroidery-table visibility; loading after house upgrade; tree-seed planting and seasons; table or shelf inventory removal; crops growing on rainy nights; and a Steam-only save-corruption case when exiting during a save.</p>
+          <a class="check-badge good" href="https://marvelousgames.com/news/moonlight-peaks-patch-notes-07-15" target="_blank" rel="noopener">Read official patch notes</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Platform Version Snapshot — July 15, 2026</h2>
+        <p>This table is a dated snapshot from the official July 15 patch page. It is not a live version table. Current platform versions may differ — check the official patch page or Steam store for the latest status.</p>
+      </div>
+    </div>
+
+    <div class="matrix-table-wrapper">
+    <table class="matrix-table">
+      <thead>
+        <tr>
+          <th>Platform</th>
+          <th>Version as of July 15</th>
+          <th>Note</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Windows PC / Steam</td>
+          <td class="demo-yes">1.1.41 — Live worldwide</td>
+          <td>First platform to receive 1.1.41</td>
+        </tr>
+        <tr>
+          <td>Nintendo Switch</td>
+          <td class="demo-no">1.1.3 — Update to follow</td>
+          <td>Not yet at 1.1.41 as of July 15 snapshot</td>
+        </tr>
+        <tr>
+          <td>Nintendo Switch 2</td>
+          <td class="demo-no">1.1.3 — Update to follow</td>
+          <td>Not yet at 1.1.41 as of July 15 snapshot</td>
+        </tr>
+        <tr>
+          <td>Google Play Games</td>
+          <td class="demo-no">1.1.3 — Update to follow</td>
+          <td>Not yet at 1.1.41 as of July 15 snapshot</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size: 13px; color: var(--quiet); margin-top: 8px;">Source: official Marvelous patch page, July 15/16, 2026. Do not treat this as the current live version for each platform.</p>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Future Updates — What Is Confirmed</h2>
+        <p>Official sources say some known issues are still under investigation. No precise roadmap or date schedule has been published.</p>
+      </div>
+    </div>
+
+    <div class="check-list">
+      <div class="check-item hold">
+        <div class="check-num">✗</div>
+        <div class="check-text">
+          <strong>No dated roadmap</strong>
+          <p>The official July 15/16 patch page says other known issues remain under investigation and that more details will be shared later. No specific update dates, version numbers, or roadmap is published.</p>
+        </div>
+        <span class="check-badge warn">Not confirmed</span>
+      </div>
+      <div class="check-item hold">
+        <div class="check-num">✗</div>
+        <div class="check-text">
+          <strong>No community workarounds published here</strong>
+          <p>Reddit, Discord, video comments, and forum workarounds are not published on this page. They remain leads until independently verified or officially confirmed.</p>
+        </div>
+        <span class="check-badge warn">Not tested</span>
+      </div>
+      <div class="check-item hold">
+        <div class="check-num">✗</div>
+        <div class="check-text">
+          <strong>Demo progress carryover</strong>
+          <p>No official source confirms whether demo save data carries to the full game. <a href="/demo/" style="color: var(--accent);">See Demo Status →</a></p>
+        </div>
+        <span class="check-badge warn">Not confirmed</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What is the latest patch for Moonlight Peaks?</summary>
+        <p>Patch 1.1.44 is the latest published, released on Steam on July 16, 2026. It fixes embroidery-table visibility, loading after a house upgrade, tree-seed planting in seasons, table or shelf inventory removal, crops growing on rainy nights, and a Steam save-corruption case when exiting during a save.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Has Patch 1.1.41 rolled out to all platforms?</summary>
+        <p>The July 15 official version table showed Steam at 1.1.41 live worldwide and Nintendo Switch, Nintendo Switch 2, and Google Play at 1.1.3 with the update to follow. This is a dated snapshot — current platform versions may differ. Check the official patch page for the latest status.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Are there any known issues still being worked on?</summary>
+        <p>The official July 15/16 patch page says other known issues remain under investigation and that more details will be shared later. No specific list or timeline has been published for these remaining issues.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Where can I find the official patch notes?</summary>
+        <p>The official Marvelous patch page at <a href="https://marvelousgames.com/news/moonlight-peaks-patch-notes-07-15" style="color: var(--accent);" target="_blank" rel="noopener">marvelousgames.com/news/moonlight-peaks-patch-notes-07-15</a> covers both the 1.1.41 improvements and the 1.1.44 fixes. Steam announcement channel also carries official notices.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does the demo progress carry over to the full game?</summary>
+        <p>No direct first-party confirmation about demo save carryover has been registered in the sources for this guide as of July 19, 2026. "Unresolved" is not the same as "no." Check the <a href="/demo/" style="color: var(--accent);">Demo Status page</a> for the full explanation.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is the game still getting updates?</summary>
+        <p>Yes. Three patches have been released since launch (1.1.38 on July 10, 1.1.41 on July 15, 1.1.44 on July 16), and the developer has indicated other known issues are still under investigation. The cadence and scope of future updates has not been announced.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Player Decision Help</h2>
+        <p>Quick guidance based on confirmed facts only.</p>
+      </div>
+    </div>
+
+    <div class="check-list">
+      <div class="check-item done">
+        <div class="check-num">1</div>
+        <div class="check-text">
+          <strong>Before buying or downloading</strong>
+          <p>Check this page for the latest patch status. If you are on Steam, you are likely on 1.1.44 or later. If you are on Switch, Switch 2, or Google Play, check the official patch page to see whether your platform has received the latest update.</p>
+        </div>
+        <span class="check-badge good">Actionable</span>
+      </div>
+      <div class="check-item done">
+        <div class="check-num">2</div>
+        <div class="check-text">
+          <strong>If you encounter bugs at launch</strong>
+          <p>Check official Steam announcements first. The Known Issues notice (July 9) and the three patch notes (1.1.38, 1.1.41, 1.1.44) address several known launch issues. Community workarounds exist online but are not verified here.</p>
+        </div>
+        <span class="check-badge good">Actionable</span>
+      </div>
+      <div class="check-item pending">
+        <div class="check-num">3</div>
+        <div class="check-text">
+          <strong>For future update news</strong>
+          <p>Bookmark the official Steam announcements channel and the official Marvelous patch page. No roadmap has been published, so checking official sources is the only way to track what's coming.</p>
+        </div>
+        <span class="check-badge warn">Monitor</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Related Guides</h2>
+      </div>
+    </div>
+    <div class="link-list">
+      <a class="link-item" href="/demo/">
+        <div class="link-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+        </div>
+        <div>
+          <strong>/demo/ — Demo Status</strong>
+          <p>Demo availability, what the demo includes, and the unresolved status on demo save carryover.</p>
+        </div>
+        <span class="link-badge info">Official Confirmed</span>
+      </a>
+      <a class="link-item" href="/switch-steam/">
+        <div class="link-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8"/></svg>
+        </div>
+        <div>
+          <strong>/switch-steam/ — Platform Status</strong>
+          <p>Full platform matrix and links to the official rollout snapshot on this page.</p>
+        </div>
+        <span class="link-badge info">Official Confirmed</span>
+      </a>
+      <a class="link-item" href="/release-date/">
+        <div class="link-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <div>
+          <strong>/release-date/ — Release Dates</strong>
+          <p>Source-labeled July 6 / July 7 / July 9 launch dates with regional context.</p>
+        </div>
+        <span class="link-badge info">Official Confirmed</span>
+      </a>
+      <a class="link-item" href="/starter-checklist/">
+        <div class="link-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <div>
+          <strong>/starter-checklist/ — Starter Checklist</strong>
+          <p>Pre-play checklist using official facts and labeled press leads.</p>
+        </div>
+        <span class="link-badge warn">Source Backed</span>
+      </a>
+      <a class="link-item" href="/sources/">
+        <div class="link-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <div>
+          <strong>/sources/ — Source Registry</strong>
+          <p>All A-level official sources used by this guide hub, with source-log IDs.</p>
+        </div>
+        <span class="link-badge">Reference</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Official Video</h2>
+        <p>Direct official link for players who want the publisher-approved overview. No thumbnail, frame, or transcript is copied onto this site.</p>
+      </div>
+    </div>
+
+    <div class="check-list">
+      <div class="check-item done">
+        <div class="check-num">▶</div>
+        <div class="check-text">
+          <strong>Moonlight Peaks — Release Date Trailer</strong>
+          <p>The official Steam release-date announcement links this YouTube video. View counts change over time; the link is the stable reference.</p>
+        </div>
+        <a class="check-badge good" href={UPDATE_STATUS.officialTrailerUrl} target="_blank" rel="noopener">Watch on YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <EvidenceBadge status="official-confirmed" lastChecked={SITE.lastChecked} gameVersion="Patch 1.1.44 / post-launch" />
+    <p style="margin-top: 10px; font-size: 13px; color: var(--quiet);">
+      Sources: Marvelous official patch page July 15/16, 2026 (moonlight-marvelous-patch-1-1-41-1-1-44-2026-07-15) · Official Steam announcements July 2026 (moonlight-steam-official-announcements-2026-07) · Steam Patch 1.1.38 July 10 (moonlight-steam-patch-1-1-38-2026-07-10) · Steam Known Issues July 9 (moonlight-steam-known-issues-2026-07-09)
+    </p>
+  </section>
+</Base>
+
+<style>
+.breadcrumb-nav {
+  font-size: 12px;
+  color: var(--quiet);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.breadcrumb-nav a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.breadcrumb-nav a:hover {
+  text-decoration: underline;
+}
+.breadcrumb-nav .sep {
+  color: var(--muted);
+}
+
+.faq-list {
+  display: grid;
+  gap: 8px;
+}
+.faq-item {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.faq-item summary {
+  padding: 14px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: var(--text);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+';
+  font-size: 18px;
+  color: var(--accent);
+  font-weight: 300;
+  flex-shrink: 0;
+}
+.faq-item[open] summary::after {
+  content: '−';
+}
+.faq-item p {
+  padding: 0 16px 14px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Timeline mobile fix: prevent date column from overflowing at 390px */
+@media (max-width: 560px) {
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .timeline-date {
+    font-size: 11px;
+    color: var(--quiet);
+  }
+}
+</style>

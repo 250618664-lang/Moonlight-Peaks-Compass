@@ -1,0 +1,481 @@
+---
+import Base from '../layouts/Base.astro';
+import EvidenceBadge from '../components/EvidenceBadge.astro';
+import AdSlot from '../components/AdSlot.astro';
+import { SITE } from '../data/site';
+
+// FAQPage JSON-LD is output only when explicitly approved.
+// Default false — must be manually approved after visual FAQ and JSON-LD are confirmed identical.
+const faqSchemaApproved = false;
+---
+<script is:inline type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://peakscompass.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Demo Status", "item": "https://peakscompass.com/demo/" }
+  ]
+}
+</script>
+{faqSchemaApproved && <script is:inline type="application/ld+json">
+{`{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does Moonlight Peaks demo progress carry over to the full game?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No direct first-party answer has been registered in this guide's evidence pack as of July 19, 2026. Check the Steam store and official Steam announcements before making save-management decisions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I download the demo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The demo is available on Steam (Windows PC) and Nintendo Switch. On Steam, look for the Download Demo button on the Moonlight Peaks store page. On Switch, search the Nintendo eShop. The Switch demo is also playable on Nintendo Switch 2."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the demo the same on Switch and Steam?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both platforms have a demo, but this guide does not confirm feature parity between the two versions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the demo include the full game?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The demo is described as a separate try-before-buy experience covering character creation, mini-games, and town resident interactions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I wait for the demo before buying?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This guide does not give purchase advice. The demo is available if you want to try the game before buying. Check the Official Updates page for the current patch status on your platform first."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to my demo save if I buy the full game?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As of July 19, 2026, no first-party source registered in this evidence pack confirms what happens to demo save data after purchasing the full game."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Google Play Games getting a demo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Official sources confirm the full game is coming to Google Play Games, but demo availability for that platform is not confirmed."
+      }
+    }
+  ]
+}`}
+</script>}
+
+<Base title="Demo Status" description="Official status on Moonlight Peaks demo save transfer. No first-party confirmation registered as of July 19, 2026 — what the unresolved carryover question means for players." noindex={false}>
+  <div class="hero-grid">
+    <div class="panel hero">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+        <a href="/">Home</a><span class="sep">›</span><span>Demo Status</span>
+      </nav>
+      <span class="eyebrow"><span class="dot"></span> Demo Status · Source Confirmed</span>
+      <h1>Moonlight Peaks<br/>Demo Status</h1>
+      <p class="lead">Demo availability, what the demo includes, and the current official status on demo save carryover — answered here using only registered official sources.</p>
+
+      <div class="answer-strip">
+        <div class="answer-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+        </div>
+        <div>
+          <strong>Demo available on Steam and Switch</strong>
+          <span>The demo is a try-before-buy separate download. The critical carryover question — whether demo save data transfers to the full game — has no registered first-party answer as of July 19, 2026.</span>
+        </div>
+      </div>
+
+      <div class="faq-card" style="margin-top: 16px; border: 1px solid var(--accent); border-radius: 6px; padding: 16px; background: color-mix(in srgb, var(--accent) 6%, var(--bg));">
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+          <div style="color: var(--accent); flex-shrink: 0; margin-top: 2px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div>
+            <strong style="color: var(--accent);">Does Moonlight Peaks demo progress carry over?</strong>
+            <p style="margin: 6px 0 0; font-size: 14px; color: var(--quiet);">
+              <strong>No direct first-party answer is registered in this guide's evidence pack as of July 19, 2026.</strong> Official sources do not state yes or no. Community posts, wiki edits, and YouTube comments may claim an answer — but those are not verifiable first-party statements. Check the <a href="https://store.steampowered.com/app/2209900/Moonlight_Peaks/" style="color: var(--accent);" target="_blank" rel="noopener">Steam store</a> and <a href="https://steamcommunity.com/app/2209900/announcements/" style="color: var(--accent);" target="_blank" rel="noopener">official Steam announcements</a> before making save-management decisions. "Unresolved" is not the same as "no."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="panel side">
+      <h2>Key Facts</h2>
+      <div class="status-grid" style="margin-top: 0;">
+        <div class="status-card good full">
+          <h3>Demo Available</h3>
+          <p>Steam (Windows PC) and Nintendo Switch. Switch demo also runs on Switch 2.</p>
+        </div>
+        <div class="status-card info full">
+          <h3>Demo Scope</h3>
+          <p>Character creation, magical mini-games, town resident interactions, and a deeper look at the full game.</p>
+        </div>
+        <div class="status-card warn full">
+          <h3>Carryover Status</h3>
+          <p>No first-party yes/no registered as of July 19. Check official channels before planning around a demo save.</p>
+        </div>
+      </div>
+      <div style="height: 1px; background: var(--line); margin: 4px 0;"></div>
+      <div class="mini">
+        <h3>See also</h3>
+        <p><a href="/updates/" style="color: var(--accent);">→ Official Updates &amp; Patches</a></p>
+        <p><a href="/switch-steam/" style="color: var(--accent);">→ Platform Status</a></p>
+        <p><a href="/release-date/" style="color: var(--accent);">→ Release Dates</a></p>
+        <p><a href="/starter-checklist/" style="color: var(--accent);">→ Starter Checklist</a></p>
+        <p><a href="/sources/" style="color: var(--accent);">→ All Sources</a></p>
+      </div>
+    </aside>
+  </div>
+
+  <AdSlot />
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Demo Availability by Platform</h2>
+        <p>Source: official Moonlight Peaks site, Marvelous Europe June 2026 demo announcement, and Steam store page.</p>
+      </div>
+    </div>
+
+    <div class="matrix-table-wrapper">
+    <table class="matrix-table">
+      <thead>
+        <tr>
+          <th>Platform</th>
+          <th>Demo Available</th>
+          <th>Note</th>
+          <th>Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Windows PC / Steam</td>
+          <td class="demo-yes">✓ Yes</td>
+          <td>Download from Steam store page</td>
+          <td>Official site · Steam store</td>
+        </tr>
+        <tr>
+          <td>Nintendo Switch</td>
+          <td class="demo-yes">✓ Yes</td>
+          <td>Also playable on Nintendo Switch 2 via backward compatibility</td>
+          <td>Official site · Marvelous Europe</td>
+        </tr>
+        <tr>
+          <td>Nintendo Switch 2</td>
+          <td class="demo-yes">✓ Yes (via Switch demo)</td>
+          <td>Switch demo runs on Switch 2 hardware</td>
+          <td>Marvelous Europe · Clouded Leopard</td>
+        </tr>
+        <tr>
+          <td>Google Play Games</td>
+          <td class="demo-no">— Not confirmed</td>
+          <td>Full game coming; demo availability unconfirmed</td>
+          <td>Marvelous USA game page</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>What the Demo Includes</h2>
+        <p>From official Marvelous Europe press release (June 2026). No exact walkthrough is published.</p>
+      </div>
+    </div>
+
+    <div class="check-list">
+      <div class="check-item done">
+        <div class="check-num">1</div>
+        <div class="check-text">
+          <strong>Character creation</strong>
+          <p>Create your vampire character at the start of the demo.</p>
+        </div>
+        <span class="check-badge good">Official source</span>
+      </div>
+      <div class="check-item done">
+        <div class="check-num">2</div>
+        <div class="check-text">
+          <strong>Magical mini-games</strong>
+          <p>Official press release describes magical mini-games as part of the demo scope.</p>
+        </div>
+        <span class="check-badge good">Official source</span>
+      </div>
+      <div class="check-item done">
+        <div class="check-num">3</div>
+        <div class="check-text">
+          <strong>Town resident interactions</strong>
+          <p>Interact with supernatural locals including werewolves, witches, and mermaids.</p>
+        </div>
+        <span class="check-badge good">Official source</span>
+      </div>
+      <div class="check-item done">
+        <div class="check-num">4</div>
+        <div class="check-text">
+          <strong>Deeper glimpse into the full game</strong>
+          <p>Marvelous Europe describes the demo as offering a deeper look at the full Moonlight Peaks experience.</p>
+        </div>
+        <span class="check-badge good">Official source</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Demo — Not Yet Confirmed</h2>
+        <p>These questions cannot be answered from official sources registered in this evidence pack as of July 19, 2026.</p>
+      </div>
+    </div>
+
+    <div class="check-list">
+      <div class="check-item hold">
+        <div class="check-num">?</div>
+        <div class="check-text">
+          <strong>Demo progress carryover</strong>
+          <p>No first-party source confirms or denies whether demo save data transfers to the full game. "Unresolved" is not the same as "no." Check official Steam announcements and the Steam store page before planning around a demo save.</p>
+        </div>
+        <span class="check-badge warn">Not confirmed</span>
+      </div>
+      <div class="check-item hold">
+        <div class="check-num">?</div>
+        <div class="check-text">
+          <strong>Google Play Games demo</strong>
+          <p>Whether a demo exists for the Google Play Games version is not confirmed by official sources.</p>
+        </div>
+        <span class="check-badge warn">Not confirmed</span>
+      </div>
+      <div class="check-item hold">
+        <div class="check-num">?</div>
+        <div class="check-text">
+          <strong>Exact demo duration or content limits</strong>
+          <p>No official source specifies how far the demo progresses or what is cut off. Exact demo walkthrough is not published on this site.</p>
+        </div>
+        <span class="check-badge warn">Not confirmed</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Does Moonlight Peaks demo progress carry over to the full game?</summary>
+        <p>No direct first-party answer has been registered in this guide's evidence pack as of July 19, 2026. Official sources do not state yes or no. Community posts and YouTube comments may claim an answer, but they are not verifiable first-party statements. Check the <a href="https://store.steampowered.com/app/2209900/Moonlight_Peaks/" style="color: var(--accent);" target="_blank" rel="noopener">Steam store</a> and <a href="https://steamcommunity.com/app/2209900/announcements/" style="color: var(--accent);" target="_blank" rel="noopener">official Steam announcements</a> before making save-management decisions.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Where can I download the demo?</summary>
+        <p>The demo is available on Steam (Windows PC) and Nintendo Switch. On Steam, look for the "Download Demo" button on the Moonlight Peaks store page. On Switch, search the Nintendo eShop or use the link from the official Moonlight Peaks website. The Switch demo is also playable on Nintendo Switch 2.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is the demo the same on Switch and Steam?</summary>
+        <p>Both platforms have a demo, but this guide does not confirm feature parity between the two versions. No official source has confirmed that both demos are identical in content or scope.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does the demo include the full game?</summary>
+        <p>No. The demo is described as a separate try-before-buy experience. It covers character creation, mini-games, and town resident interactions, but it is not the full game. See "What the Demo Includes" above for the official scope description.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Should I wait for the demo before buying?</summary>
+        <p>This guide does not give purchase advice. The demo is available if you want to try the game before buying. Check the <a href="/updates/" style="color: var(--accent);">Official Updates page</a> for the current patch status on your platform before downloading.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What happens to my demo save if I buy the full game?</summary>
+        <p>As of July 19, 2026, no first-party source registered in this evidence pack confirms what happens to demo save data after purchasing the full game. "No confirmation" is not the same as "it does not carry over." Check the official Steam announcements and store page for any update on this question.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is Google Play Games getting a demo?</summary>
+        <p>Official sources confirm the full game is coming to Google Play Games, but demo availability for that platform is not confirmed. The Steam and Switch demos are confirmed; Google Play Games demo status is not.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Player Decision Help</h2>
+        <p>Quick guidance based on confirmed facts only.</p>
+      </div>
+    </div>
+
+    <div class="check-list">
+      <div class="check-item done">
+        <div class="check-num">1</div>
+        <div class="check-text">
+          <strong>Before downloading the demo</strong>
+          <p>Check the <a href="/updates/" style="color: var(--accent);">Official Updates page</a> for the current patch status on your platform. If you are on Steam, Patch 1.1.44 is the latest. Platform updates may still be rolling out for Switch, Switch 2, and Google Play.</p>
+        </div>
+        <span class="check-badge good">Actionable</span>
+      </div>
+      <div class="check-item pending">
+        <div class="check-num">2</div>
+        <div class="check-text">
+          <strong>Do not assume demo save behavior</strong>
+          <p>Until an official source confirms whether demo progress carries over, do not make save-management decisions based on community posts alone. If carryover is important to you, check the Steam store page and official announcements before starting the demo.</p>
+        </div>
+        <span class="check-badge warn">Unresolved</span>
+      </div>
+      <div class="check-item done">
+        <div class="check-num">3</div>
+        <div class="check-text">
+          <strong>Use the demo as a purchase-decision preview</strong>
+          <p>The demo is officially described as giving a deeper look at the full game. Use it to decide whether Moonlight Peaks is right for you before buying.</p>
+        </div>
+        <span class="check-badge good">Actionable</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Related Guides</h2>
+      </div>
+    </div>
+    <div class="link-list">
+      <a class="link-item" href="/updates/">
+        <div class="link-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <div>
+          <strong>/updates/ — Official Updates &amp; Patch Status</strong>
+          <p>Latest patch is 1.1.44 on Steam. Platform rollout still in progress. Known issues still under investigation.</p>
+        </div>
+        <span class="link-badge info">Official Confirmed</span>
+      </a>
+      <a class="link-item" href="/switch-steam/">
+        <div class="link-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8"/></svg>
+        </div>
+        <div>
+          <strong>/switch-steam/ — Platform Status</strong>
+          <p>Full platform matrix for Moonlight Peaks: Steam, Switch, Switch 2, and Google Play Games.</p>
+        </div>
+        <span class="link-badge info">Official Confirmed</span>
+      </a>
+      <a class="link-item" href="/release-date/">
+        <div class="link-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <div>
+          <strong>/release-date/ — Release Dates</strong>
+          <p>Source-labeled July 6 / July 7 / July 9 launch dates with regional context.</p>
+        </div>
+        <span class="link-badge info">Official Confirmed</span>
+      </a>
+      <a class="link-item" href="/starter-checklist/">
+        <div class="link-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <div>
+          <strong>/starter-checklist/ — Starter Checklist</strong>
+          <p>Pre-play checklist using official facts and labeled press leads.</p>
+        </div>
+        <span class="link-badge warn">Source Backed</span>
+      </a>
+      <a class="link-item" href="/sources/">
+        <div class="link-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <div>
+          <strong>/sources/ — Source Registry</strong>
+          <p>All A-level official sources used by this guide, with source-log IDs and evidence tiers.</p>
+        </div>
+        <span class="link-badge">Reference</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <EvidenceBadge status="official-confirmed" lastChecked={SITE.lastChecked} gameVersion="post-launch" />
+    <p style="margin-top: 10px; font-size: 13px; color: var(--quiet);">
+      Sources: official Moonlight Peaks site (moonlight-official-site) · Steam store page (moonlight-steam-store) · Steam store live snapshot July 10 (moonlight-steam-store-live-2026-07) · Marvelous Europe June 2026 demo announcement (moonlight-marvelous-eu-demo-2026-06)
+    </p>
+  </section>
+</Base>
+
+<style>
+.breadcrumb-nav {
+  font-size: 12px;
+  color: var(--quiet);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.breadcrumb-nav a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.breadcrumb-nav a:hover {
+  text-decoration: underline;
+}
+.breadcrumb-nav .sep {
+  color: var(--muted);
+}
+
+.faq-list {
+  display: grid;
+  gap: 8px;
+}
+.faq-item {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.faq-item summary {
+  padding: 14px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: var(--text);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+';
+  font-size: 18px;
+  color: var(--accent);
+  font-weight: 300;
+  flex-shrink: 0;
+}
+.faq-item[open] summary::after {
+  content: '−';
+}
+.faq-item p {
+  padding: 0 16px 14px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+</style>

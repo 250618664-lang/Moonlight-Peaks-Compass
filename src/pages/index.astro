@@ -1,0 +1,250 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
+import { GAME_IDENTITY } from '../data/claims';
+import AdSlot from '../components/AdSlot.astro';
+---
+
+<Base title="">
+  <div class="hero-grid">
+    <div class="panel hero">
+      <span class="eyebrow"><span class="dot"></span> {SITE.gameName} — {GAME_IDENTITY.developer} · Post-Launch Guide Hub</span>
+      <h1>{SITE.gameName}<br/>Official Updates &amp; Demo Guide</h1>
+      <p class="lead">Unofficial post-launch guide hub for Moonlight Peaks. Official update status, demo carryover answers, platform availability, and release dates — source-backed only. Not affiliated with Little Chicken Game Company or Marvelous.</p>
+
+      <div class="task-grid">
+        <a class="task-card" href="/updates/">
+          <div class="card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3>Official Updates</h3>
+          <p>Latest: Patch 1.1.44 (Steam). Platform rollout still in progress. Known issues under investigation — no dated roadmap.</p>
+        </a>
+        <a class="task-card" href="/demo/">
+          <div class="card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          </div>
+          <h3>Demo Status</h3>
+          <p>Demo available on Steam and Switch. Demo carryover: no first-party answer registered as of July 19 — explained here.</p>
+        </a>
+        <a class="task-card" href="/switch-steam/">
+          <div class="card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8"/></svg>
+          </div>
+          <h3>Platform Status</h3>
+          <p>Steam, Switch, Switch 2, and Google Play Games availability with demo and date notes. Links to rollout snapshot.</p>
+        </a>
+        <a class="task-card" href="/release-date/">
+          <div class="card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h3>Release Dates</h3>
+          <p>July 7 primary launch. July 9 regional (HK/TW/KR). Source-labeled dates — see which applies to your region.</p>
+        </a>
+      </div>
+    </div>
+
+    <aside class="panel side">
+      <h2>Quick Status</h2>
+      <div class="status-grid" style="margin-top: 0;">
+        <div class="status-card info">
+          <h3>Demo Available</h3>
+          <p>Steam &amp; Switch (also Switch 2)</p>
+        </div>
+        <div class="status-card good">
+          <h3>Full Game Live</h3>
+          <p>July 6–7, 2026 primary launch. HK/TW/KR via Clouded Leopard July 9.</p>
+        </div>
+        <div class="status-card good full">
+          <h3>Latest Patch</h3>
+          <p>1.1.44 on Steam (July 16). Platform rollout still in progress.</p>
+        </div>
+        <div class="status-card warn full">
+          <h3>Demo Carryover</h3>
+          <p>No first-party confirmation registered as of July 19. "Unresolved" ≠ no.</p>
+        </div>
+      </div>
+
+      <div style="height: 1px; background: var(--line); margin: 4px 0;"></div>
+
+      <div class="mini">
+        <h3>Quick Links</h3>
+        <p><a href="/demo/" style="color: var(--accent);">→ Demo Status</a></p>
+        <p><a href="/switch-steam/" style="color: var(--accent);">→ Platform Matrix</a></p>
+        <p><a href="/release-date/" style="color: var(--accent);">→ Release Dates</a></p>
+        <p><a href="/starter-checklist/" style="color: var(--accent);">→ Starter Checklist</a></p>
+        <p><a href="/sources/" style="color: var(--accent);">→ Source Trust</a></p>
+      </div>
+    </aside>
+  </div>
+
+  <AdSlot />
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>Launch &amp; Demo Status Matrix</h2>
+        <p>Post-launch guide hub — last refreshed {SITE.lastChecked}. All facts from registered official sources or verified press releases.</p>
+      </div>
+      <span class="pill">{SITE.pages.length} pages</span>
+    </div>
+
+    <div class="matrix-table-wrapper">
+    <table class="matrix-table">
+      <thead>
+        <tr>
+          <th>Platform</th>
+          <th>Demo</th>
+          <th>Launch Date</th>
+          <th>Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Windows PC / Steam</td>
+          <td class="demo-yes">✓ Available</td>
+          <td>July 7, 2026</td>
+          <td><a href="/sources/" style="color: var(--accent);">Official site · Steam</a></td>
+        </tr>
+        <tr>
+          <td>Nintendo Switch</td>
+          <td class="demo-yes">✓ Available</td>
+          <td>July 7, 2026 (Americas/EU)</td>
+          <td><a href="/sources/" style="color: var(--accent);">Official site · Marvelous EU</a></td>
+        </tr>
+        <tr>
+          <td>Nintendo Switch 2</td>
+          <td class="demo-yes">✓ Available (via Switch demo)</td>
+          <td>July 7, 2026 (Americas/EU)</td>
+          <td><a href="/sources/" style="color: var(--accent);">Marvelous EU · Clouded Leopard</a></td>
+        </tr>
+        <tr>
+          <td>Google Play Games</td>
+          <td class="demo-no">— Not confirmed</td>
+          <td>July 7, 2026</td>
+          <td><a href="/sources/" style="color: var(--accent);">Marvelous USA</a></td>
+        </tr>
+        <tr>
+          <td>Switch (HK/TW/KR)</td>
+          <td class="demo-yes">✓ Available</td>
+          <td>July 9, 2026</td>
+          <td><a href="/sources/" style="color: var(--accent);">Clouded Leopard (regional)</a></td>
+        </tr>
+        <tr>
+          <td>Switch 2 (HK/TW/KR)</td>
+          <td class="demo-yes">✓ Available</td>
+          <td>July 9, 2026</td>
+          <td><a href="/sources/" style="color: var(--accent);">Clouded Leopard (regional)</a></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>What can you find here?</h2>
+        <p>Every page shows its verification status and source label. No copied wiki content.</p>
+      </div>
+    </div>
+
+    <div class="link-list">
+      <a class="link-item" href="/updates/">
+        <div class="link-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <div>
+          <strong>/updates/ — Official Updates &amp; Patches</strong>
+          <p>Patch 1.1.44 (Steam), platform rollout snapshot, and official support status. A-page with 6 FAQs and decision help.</p>
+        </div>
+        <span class="link-badge info">Official Confirmed</span>
+      </a>
+      <a class="link-item" href="/demo/">
+        <div class="link-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+        </div>
+        <div>
+          <strong>/demo/ — Demo Status</strong>
+          <p>Demo carryover answer: no first-party confirmation registered as of July 19. 7 FAQs, platform table, decision help. "Unresolved" ≠ no.</p>
+        </div>
+        <span class="link-badge info">Official Confirmed</span>
+      </a>
+      <a class="link-item" href="/switch-steam/">
+        <div class="link-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8"/></svg>
+        </div>
+        <div>
+          <strong>/switch-steam/ — Platform Status</strong>
+          <p>Full platform matrix: Steam, Switch, Switch 2, Google Play Games with demo and date notes. Links to official rollout snapshot.</p>
+        </div>
+        <span class="link-badge info">Official Confirmed</span>
+      </a>
+      <a class="link-item" href="/release-date/">
+        <div class="link-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <div>
+          <strong>/release-date/ — Release Dates</strong>
+          <p>July 7 primary launch and July 9 regional difference, each with source attribution. Critical distinction for HK/TW/KR readers.</p>
+        </div>
+        <span class="link-badge info">Official Confirmed</span>
+      </a>
+      <a class="link-item" href="/starter-checklist/">
+        <div class="link-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <div>
+          <strong>/starter-checklist/ — Starter Checklist</strong>
+          <p>Pre-play checklist using official facts and labeled press leads. No walkthrough, no invented gameplay details.</p>
+        </div>
+        <span class="link-badge warn">Source Backed</span>
+      </a>
+      <a class="link-item" href="/sources/">
+        <div class="link-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <div>
+          <strong>/sources/ — Source Registry</strong>
+          <p>All A-level official sources used by this guide hub, with source-log IDs, evidence tiers, and held claims.</p>
+        </div>
+        <span class="link-badge">Reference</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <div>
+        <h2>What we do NOT publish</h2>
+        <p>These categories are held until official confirmation or hands-on testing.</p>
+      </div>
+    </div>
+    <div class="can-cannot">
+      <div class="cannot-card">
+        <h3>✗ Not published yet</h3>
+        <ul>
+          <li>Romance gifts, dating routes, or heart events</li>
+          <li>Full character list or villager profiles</li>
+          <li>Crop tables, recipes, prices, or growth times</li>
+          <li>Exact demo walkthrough or task routes</li>
+          <li>Save transfer or demo progress carryover (not confirmed)</li>
+          <li>Official screenshots, Steam capsule art, or media assets</li>
+          <li>Tier lists, best build, or optimal crop strategies</li>
+        </ul>
+      </div>
+      <div class="can-card">
+        <h3>✓ Published safely</h3>
+        <ul>
+          <li>Game identity: Moonlight Peaks by Little Chicken Game Company</li>
+          <li>Demo availability: Steam and Switch (also playable on Switch 2)</li>
+          <li>Demo scope: character creation, mini-games, town resident interactions (official)</li>
+          <li>Launch date: July 7, 2026 (US/EU/Steam); July 9 for HK/TW/KR via Clouded Leopard</li>
+          <li>Platform list: PC, Switch, Switch 2, Google Play Games</li>
+          <li>Source trust level for every published fact</li>
+          <li>Clear "not hands-on tested" labels where appropriate</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</Base>
